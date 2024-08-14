@@ -1,0 +1,124 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+ 
+body {
+  background-color: #2c064e;
+}
+
+.container {
+  text-align: center;
+  /* width: 30%; */
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 80vh;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input {
+  width: 70%;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #8707FF;
+}
+.input:focus {
+border: 1px solid #8707FF;
+}
+
+.input:active {
+border: 1px solid #8707FF;
+}
+
+.container h2,h3,h1 {
+  color: #fff;
+}
+
+button {
+  padding: 10px 30px;
+  margin-left: 20px;
+  border: none;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+  background: linear-gradient(to right, #00ffa3, #dc1fff);
+  box-shadow: rgba(202, 5, 237, 0.96) 0 7px 15px -7px;
+  /* background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb); */
+  cursor: pointer;
+  font-size: 20px;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  border-radius: 4px;
+  background-color: white;
+  z-index: -1;
+  transition: 200ms;
+}
+
+button::after {
+  content: attr(data);
+  font-size: 16px;
+  background: linear-gradient(to left, #00ffa3, #dc1fff);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 200ms;
+}
+
+button:hover::before {
+  opacity: 0%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+button:hover::after {
+  color: #fff;
+}
